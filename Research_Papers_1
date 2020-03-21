@@ -1,0 +1,26 @@
+https://arxiv.org/pdf/1909.08855.pdf
+
+
+Important Points:
+Methods to infuse knowledge into model
+1) Fine-Tune BERT model on a KB which has knowledge statements relevant to that of each of the datasets and then use the model to answer questions
+2)Open-Book Strategy :-we choose a certain number of knowledge statements from the KB that are textually similar to each of the samples of the datasets. Then we fine-tune the pre-trained BERT model for the question answering task to choose the answer.
+3)Combine both:- First using KB and then use additional knowledge .
+
+
+Generate a knowledgebase from the events and inference dimensions provided by the ATOMIC dataset. The ATOMIC
+dataset contains events and eight types of if-then inferences. The total number of events are 732,723. Some events are
+masked, which we fill by using a BERT Large model and Masked Language Modelling task. We extend the knowledge source, and replace PersonX and
+PersonY, as present in the original ATOMIC dataset, using gender neutral names.
+
+Knowledge Extraction:-
+use an information retrieval model and then re-rank using Information Gain based Reranking. The query is generated using a simple heuristic of
+unique non-stopwords present in the question, answer option and context if present. For each dataset, we select the top ten knowledge sentences.
+
+five different models of using knowledge with the standard BERT architecture for the open-book strategy.
+Each of these modules take as input a problem instance which contains a question Q, n answer choices and a list called premises of length n. Each element in premises contains m number of knowledge passages which might be useful while answering the question Q.
+ Each model computes a score score(i) for each of the n answer choices. The final answer is the answer choice that receives the maximum score.
+ 
+ Check out the five different models in the paper.
+ 
+ 
