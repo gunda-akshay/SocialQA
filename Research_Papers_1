@@ -5,7 +5,7 @@ Important Points:
 Methods to infuse knowledge into model
 1) Fine-Tune BERT model on a KB which has knowledge statements relevant to that of each of the datasets and then use the model to answer questions
 2)Open-Book Strategy :-we choose a certain number of knowledge statements from the KB that are textually similar to each of the samples of the datasets. Then we fine-tune the pre-trained BERT model for the question answering task to choose the answer.
-3)Combine both:- First using KB and then use additional knowledge .
+3)Combine both:- First using KB and then use additional knowledge.
 
 
 Generate a knowledgebase from the events and inference dimensions provided by the ATOMIC dataset. The ATOMIC
