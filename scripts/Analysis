@@ -1,3 +1,4 @@
+# Analysis - Social Interaction Question Answering (Social IQA)
 
 SocialIQA Dataset consists of positive and negative answers. Negative answers are the options which are generated from the same context but they are correct answers for a  different question.These cannot be handled by the regular models as there is a lot of similarity between all the answer choices and regular models cannot differentiate between them. So, we need additional knowledge to handle such problems. 
 BERT ,RoBERTa and ELMo are different pre-trained models, They are trained using a large set of knowledge bases. Only using pre-trained models for the Social IQA dataset may result in many misclassification errors. The main misclassifications that may occur are when
