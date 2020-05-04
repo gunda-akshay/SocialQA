@@ -47,7 +47,7 @@ class RoBertaMCQWeightedSum(BertPreTrainedModel):
             self._weight_layer = self._classification_layer
         else:
             self._weight_layer = nn.Linear(config.hidden_size, 1)
-        self.apply(self.init_weights)
+        self.init_weights()
 
     def forward(self,  # type: ignore
                 input_ids,

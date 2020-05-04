@@ -33,7 +33,7 @@ from hf_bert_mcq_mac import BertMCQMAC
 from hf_roberta_mcq_concat import RoBertaMCQConcat
 from hf_roberta_mcq_concat_reader import RoBertaMCQConcatReader
 from hf_roberta_mcq_weighted_sum import RoBertaMCQWeightedSum
-from hf_roberta_mcq_conv3d import RoBertaMCQConv3d
+#from hf_roberta_mcq_conv3d import RoBertaMCQConv3d
 from hf_roberta_mcq_simple_sum import RoBertaMCQSimpleSum
 from hf_roberta_mcq_mac import RoBertaMCQMAC
 from hf_roberta_mcq_parallel_reader import RoBertaMCQParallelReader

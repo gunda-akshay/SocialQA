@@ -59,10 +59,10 @@ def accuracy(out, labels):
     outputs = np.argmax(out, axis=1)
     return np.sum(outputs == labels),outputs
 
-def _get_loss_accuracy(loss:float,accuracy:float):
+def _get_loss_accuracy(loss,accuracy):
     return "accuracy: %.4f"%accuracy + ", loss: %.4f"%loss
 
-def _show_runtime(seconds:int):
+def _show_runtime(seconds):
     return f"{(seconds//3600)} hours : {(seconds//60)} minutes"
 
 def main():

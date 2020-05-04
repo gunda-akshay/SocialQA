@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#SBATCH -n 1
+#SBATCH -n 4
 #SBATCH -p gpu
 #SBATCH -q wildfire
 #SBATCH --gres=gpu:1
@@ -56,6 +56,7 @@ module load tensorflow/1.8-agave-gpu
 
 #python3 apex/setup.py "--cpp_ext" --global-option="--cuda_ext"
 
-#python3 pytorch_transformers/models/hf_trainer.py --training_data_path train_typed.jsonl --validation_data_path dev_typed.jsonl  --mcq_model roberta-mcq-concat  --tie_weights_weighted_sum --bert_model roberta-large --output_dir  /scratch/sjaliga1/roberta-large-model2 --num_train_epochs 10 --train_batch_size 32  --do_eval --do_train --max_seq_length 128 --do_lower_case --gradient_accumulation_steps 16 --eval_freq 1000 --learning_rate 9e-6  --warmup_steps 400 --weight_decay 0.001 --fp16
+python3 pytorch_transformers/models/hf_trainer.py --training_data_path train_with_dataset_typed.jsonl --validation_data_path dev_with_dataset_typed.jsonl  --mcq_model bert-mcq-concat  --tie_weights_weighted_sum --bert_model bert-large-cased --output_dir  /scratch/sjaliga1/bert-large-model2 --num_train_epochs 10 --train_batch_size 32  --do_eval --do_train --max_seq_length 128 --do_lower_case --gradient_accumulation_steps 16 --eval_freq 1000 --learning_rate 9e-6  --warmup_steps 400 --weight_decay 0.001 --fp16
 
-python3 pytorch_transformers/models/hf_scorer.py --input_data_path dev_typed.jsonl   --max_number_premises 1 --max_seq_length 80 --eval_batch_size 1 --model_dir /scratch/sjaliga1/roberta-large-model2 --bert_model roberta-large --mcq_model roberta-mcq-concat  --output_data_path /scratch/sjaliga1/evaluation1
+python3 pytorch_transformers/models/hf_scorer.py --input_data_path dev_typed.jsonl   --max_number_premises 1 --max_seq_length 80 --eval_batch_size 1 --model_dir /scratch/sjaliga1/bert-large-model --bert_model bert-large-cased --mcq_model bert-mcq-concat  --output_data_path /scratch/sjaliga1/evaluation
+

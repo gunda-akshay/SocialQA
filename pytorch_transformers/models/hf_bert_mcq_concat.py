@@ -37,7 +37,7 @@ class BertMCQConcat(BertPreTrainedModel):
         self.bert = BertModel(config)
         self._dropout = nn.Dropout(config.hidden_dropout_prob)
         self._classification_layer = nn.Linear(config.hidden_size, 1)
-        self.apply(self.init_weights)
+        self.init_weights()
 
     def forward(self,  # type: ignore
                 input_ids,      # batch_size, number_of_choices, max_seq_len

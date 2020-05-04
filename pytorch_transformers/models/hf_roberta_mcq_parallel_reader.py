@@ -178,6 +178,7 @@ class RoBertaMCQParallelReader:
                 
                 pp_tokens, pp_segment_ids = self.text_to_instance(tokenizer, max_seq_len, premises, choices,
                                                                   question, max_number_premises)
+                max_number_premises = 0
                 for per_choice_pp in pp_tokens:
                     max_number_premises = max(max_number_premises, len(per_choice_pp))
                 assert len(pp_tokens) == len(pp_segment_ids)
