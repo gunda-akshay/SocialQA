@@ -7,6 +7,6 @@ It gives a detailed analysis of the Social IQA using BERT without any External K
 
 
 
-#### Scripts/Social IQA Project Phase 1 Report
+#### Scripts/Social IQA Project Report
 
 It gives a report of Social Interaction Question Answering with Abstract, Introduction, Dataset/Task Descriptions, Methods Implementation and Conclusion & Future Directions
